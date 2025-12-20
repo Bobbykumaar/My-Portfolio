@@ -4,20 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bobby Kumar | Portfolio</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <header>
-        <h1>Bobby Kumar</h1>
-        <p>Electrical & Electronics Engineer | IT Operations | Python & Data Analytics</p>
-        <p>Email: b200124@nitsikkim.ac.in | Phone: 9264126662</p>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-content">
+
+            <!-- Profile Image -->
+            <img
+                src="{{ url_for('static', filename='images/profile.jpg') }}"
+                alt="Bobby Kumar"
+                class="profile-img"
+            >
+
+            <!-- Intro -->
+            <div class="intro-text">
+                <h1>Bobby Kumar</h1>
+                <p>
+                    Electrical & Electronics Engineer | IT Operations | Python & Data Analytics
+                </p>
+                <p>
+                    b200124@nitsikkim.ac.in | 9264126662
+                </p>
+            </div>
+
+        </div>
     </header>
 
+    <!-- About -->
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a 2024 Electrical & Electronics Engineering graduate from NIT Sikkim, currently working as Junior Manager at Intellismart Infrastructure Pvt. Ltd. I specialize in Python automation, data analytics, cloud-based utility systems, and web development.</p>
+        <p>
+            I am a 2024 Electrical and Electronics Engineering graduate from NIT Sikkim,
+            currently working as a Junior Manager – IT Operations at Intellismart
+            Infrastructure Pvt. Ltd. I have hands-on experience in Python-based data
+            analysis, automation, and reporting, along with exposure to cloud-based
+            AMISP systems including HES and MDMS.
+        </p>
+        <p>
+            I received the Innovation Award for automating a critical reporting process
+            in a ₹200+ crore utility project, reducing execution time from 12 hours to
+            4 minutes and significantly improving operational efficiency.
+        </p>
     </section>
 
+    <!-- Skills -->
     <section id="skills">
         <h2>Skills</h2>
         <ul>
@@ -27,43 +72,69 @@
         </ul>
     </section>
 
+    <!-- Projects -->
     <section id="projects">
         <h2>Projects</h2>
         <ul>
             {% for project in projects %}
                 <li>
-                    <strong>{{ project.title }}</strong>: {{ project.description }} 
-                    {% if project.link != '#' %}
-                        - <a href="{{ project.link }}" target="_blank">View</a>
+                    <strong>{{ project.title }}</strong><br>
+                    {{ project.description }}
+                    {% if project.link != "#" %}
+                        <br>
+                        <a href="{{ project.link }}" target="_blank">View Project</a>
                     {% endif %}
                 </li>
             {% endfor %}
         </ul>
     </section>
 
+    <!-- Experience -->
     <section id="experience">
         <h2>Experience</h2>
         <ul>
             {% for exp in experience %}
                 <li>
-                    <strong>{{ exp.role }} @ {{ exp.company }}</strong> ({{ exp.duration }})<br>
+                    <strong>{{ exp.role }} @ {{ exp.company }}</strong><br>
+                    <em>{{ exp.duration }}</em><br>
                     {{ exp.details }}
                 </li>
             {% endfor %}
         </ul>
     </section>
 
+    <!-- Contact -->
     <section id="contact">
-        <h2>Contact Me</h2>
+        <h2>Contact</h2>
         <p>Email: b200124@nitsikkim.ac.in</p>
         <p>Phone: 9264126662</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile/" target="_blank">View Profile</a></p>
-        <p>GitHub: <a href="https://github.com/Bobbykumaar" target="_blank">View GitHub</a></p>
-        <a href="{{ url_for('static', filename='images/Bobby_Kumar_CV.pdf') }}" download class="cv-btn">Download CV</a>
+
+        <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/in/bobby-kumar-073b92203" target="_blank">
+                View Profile
+            </a>
+        </p>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/Bobbykumaar" target="_blank">
+                View GitHub
+            </a>
+        </p>
+
+        <a
+            href="{{ url_for('static', filename='images/Bobby_Kumar_CV.pdf') }}"
+            class="cv-btn"
+            download
+        >
+            Download CV
+        </a>
     </section>
 
     <footer>
         <p>&copy; 2025 Bobby Kumar</p>
     </footer>
+
 </body>
 </html>

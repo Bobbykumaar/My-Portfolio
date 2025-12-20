@@ -1,34 +1,112 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0 20px;
+    padding: 0;
     line-height: 1.6;
     background-color: #f4f4f4;
-}
-
-header {
-    text-align: center;
-    padding: 30px 0;
-    background-color: #007BFF;
-    color: white;
-}
-
-h1, h2 {
     color: #333;
 }
 
+/* Navigation Bar */
+.navbar {
+    background-color: #007BFF;
+    padding: 12px 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background-color: #007BFF;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Profile Image */
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+}
+
+/* Intro Text */
+.intro-text h1 {
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.intro-text p {
+    margin: 4px 0;
+    color: #f0f0f0;
+}
+
+/* Section Styling */
 section {
-    margin: 20px 0;
-    padding: 20px;
-    background: white;
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 25px;
+    background: #ffffff;
     border-radius: 8px;
 }
 
+/* Headings */
+h1, h2 {
+    color: #333333;
+}
+
+h2 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 6px;
+}
+
+/* Lists */
 ul {
-    list-style-type: disc;
     margin-left: 20px;
 }
 
+ul li {
+    margin-bottom: 8px;
+}
+
+/* Links */
 a {
     color: #007BFF;
     text-decoration: none;
@@ -38,23 +116,48 @@ a:hover {
     text-decoration: underline;
 }
 
+/* CV Button */
 .cv-btn {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
+    margin-top: 12px;
+    padding: 10px 18px;
     background-color: #007BFF;
-    color: white;
+    color: #ffffff;
     border-radius: 5px;
-    text-decoration: none;
+    font-weight: bold;
 }
 
 .cv-btn:hover {
     background-color: #0056b3;
 }
 
+/* Footer */
 footer {
     text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #ddd;
+    padding: 15px;
+    margin-top: 30px;
+    background-color: #dddddd;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
 }
